@@ -1,7 +1,7 @@
 {
-  "name": "time-tracker-app",
+  "name": "date-time",
   "version": "1.0.0",
-  "description": "A simple time tracking app",
+  "description": "A simple date and time app",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
