@@ -4,7 +4,9 @@ function updateProgress() {
     const elapsed = now - start;
     const progress = Math.min(Math.max(elapsed / total * 100, 0), 100);
 
-    document.getElementById('progress-bar').style.width = `${progress}%`;
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = `${progress}%`;
+    progressBar.textContent = `${Math.round(progress)}%`;
 
     const remaining = end - now;
     const timeInfo = remaining > 0
