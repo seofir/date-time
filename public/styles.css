@@ -4,6 +4,7 @@
     --background-color: #ecf0f1;
     --text-color: #34495e;
     --card-background: #ffffff;
+    --progress: 0%;
   }
   
   * {
@@ -82,50 +83,47 @@
   }
   
   .progress-container {
-    background-color: #e0e0e0;
-    border-radius: 10px;
+    width: 100%;
+    height: 30px;
     margin: 20px 0;
-    height: 20px;
-    overflow: hidden;
-    position: relative;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 15px;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
   }
   
   .progress-bar {
-    width: 0;
+    width: var(--progress);
     height: 100%;
+    border-radius: 11px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    border-radius: 10px;
-    transition: width 0.5s ease-in-out;
+    background-size: 50px 50px;
+    box-shadow: 0 0 10px 0px var(--secondary-color);
+    animation: 
+      shine 4s ease-in infinite,
+      end 1s ease-out 1;
+    transition: width 0.5s ease;
   }
   
-  .progress-bar::after {
-    content: '';
+  @keyframes shine {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 0; }
+  }
+  
+  @keyframes end {
+    0%, 100% { box-shadow: 0 0 10px 0px var(--secondary-color); }
+    50% { box-shadow: 0 0 15px 5px var(--secondary-color); }
+  }
+  
+  #progress-text {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1) 25%,
-      transparent 25%,
-      transparent 50%,
-      rgba(255, 255, 255, 0.1) 50%,
-      rgba(255, 255, 255, 0.1) 75%,
-      transparent 75%,
-      transparent 100%
-    );
-    background-size: 30px 30px;
-    animation: stripes 1s linear infinite;
-  }
-  
-  @keyframes stripes {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 30px 0;
-    }
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   }
   
   #time-info {
@@ -135,6 +133,7 @@
     font-weight: bold;
     color: var(--primary-color);
   }
+  
   
   @media (max-width: 480px) {
     .container {
