@@ -9,7 +9,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   const now = moment().tz('Asia/Jerusalem');
-  res.render('index', { defaultStart: now.format('YYYY-MM-DDTHH:mm') });
+  const defaultStart = now.format('YYYY-MM-DDTHH:mm');
+  const defaultEnd = now.format('YYYY-MM-DDTHH:mm');
+  res.render('index', { defaultStart, defaultEnd });
 });
 
 app.post('/generate', (req, res) => {

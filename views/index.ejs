@@ -21,10 +21,10 @@
             <input type="time" id="startTime" name="startTime" value="<%= defaultStart.split('T')[1] %>" required>
 
             <label for="endDate">End Date</label>
-            <input type="date" id="endDate" name="endDate" required>
+            <input type="date" id="endDate" name="endDate" value="<%= defaultEnd.split('T')[0] %>" required>
 
             <label for="endTime">End Time</label>
-            <input type="time" id="endTime" name="endTime" required>
+            <input type="time" id="endTime" name="endTime" value="<%= defaultEnd.split('T')[1] %>" required>
 
             <button type="submit">Generate Progress Bar</button>
         </form>
