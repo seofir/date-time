@@ -1,7 +1,7 @@
 {
   "name": "date-time",
   "version": "1.0.0",
-  "description": "A simple date and time app",
+  "description": "A simple progress bar app",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
@@ -9,9 +9,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "ejs": "^3.1.6",
-    "moment": "^2.29.1"
+    "moment-timezone": "^0.5.33"
   },
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   }
 }
